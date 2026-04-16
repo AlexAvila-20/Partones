@@ -77,7 +77,7 @@ Requisitos
         NumericalDifferentialEquationAnalysis` (se utiliza GaussianQuadratureWeights).
     Sistema para compilar LaTeX si se desea regenerar el PDF del informe (pdflatex / latexmk / Overleaf).
 
-# Notas metodológicas y limitaciones
+## Notas metodológicas y limitaciones
 
 La reconstrucción polinómica directa puede ser sensible a la condicionalidad numérica del sistema (especialmente con muchos momentos). En el notebook se usa LeastSquares para mitigar problemas en sistemas sobredeterminados/indeterminados.
     
@@ -85,7 +85,7 @@ Forzar positividad con Max[0, ·] garantiza densidad no negativa pero puede intr
 Para cuadratura Gauss, el cálculo directo de una cota de error requiere derivadas de orden alto; en el código se estima la estabilidad comparando n y n−1 nodos.
 Los resultados y figuras presentes en Informe/ fueron generados con los notebooks incluidos; para reproducir las figuras ejecute las celdas correspondientes.
 
-# Reproducibilidad
+## Reproducibilidad
 
 Abrir Aproximaciones.nb y ErroresAproximación.nb en Mathematica.
 Ejecutar las celdas que definen las funciones.
