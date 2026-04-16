@@ -67,10 +67,11 @@ reconstruirBetaConError["Gauss", 5, 3, 7, 30]
 reconstruirBetaConError["Simpson", 8, 3, 7, 75]
 analizarPrecisionPorMomentos["Trapecio", 3, 7, 30, 1, 10]
 compararMetodos[{"Trapecio", "Simpson", "Gauss"}, 3, 7, 30, 1, 10]
+```
+
 
 Las funciones devuelven Associations que permiten seguir procesando los resultados (evaluar la función reconstruida en puntos arbitrarios, extraer vectores de error, etc.).
 Requisitos
-
     Wolfram Mathematica o Wolfram Engine.
     Paquetes (incluidos en los notebooks):
         NumericalDifferentialEquationAnalysis` (se utiliza GaussianQuadratureWeights).
@@ -78,15 +79,16 @@ Requisitos
 
 # Notas metodológicas y limitaciones
 
-    La reconstrucción polinómica directa puede ser sensible a la condicionalidad numérica del sistema (especialmente con muchos momentos). En el notebook se usa LeastSquares para mitigar problemas en sistemas sobredeterminados/indeterminados.
-    Forzar positividad con Max[0, ·] garantiza densidad no negativa pero puede introducir distorsiones en regiones donde el polinomio original toma valores negativos por oscilaciones numéricas.
-    Para cuadratura Gauss, el cálculo directo de una cota de error requiere derivadas de orden alto; en el código se estima la estabilidad comparando n y n−1 nodos.
-    Los resultados y figuras presentes en Informe/ fueron generados con los notebooks incluidos; para reproducir las figuras ejecute las celdas correspondientes.
+La reconstrucción polinómica directa puede ser sensible a la condicionalidad numérica del sistema (especialmente con muchos momentos). En el notebook se usa LeastSquares para mitigar problemas en sistemas sobredeterminados/indeterminados.
+    
+Forzar positividad con Max[0, ·] garantiza densidad no negativa pero puede introducir distorsiones en regiones donde el polinomio original toma valores negativos por oscilaciones numéricas.
+Para cuadratura Gauss, el cálculo directo de una cota de error requiere derivadas de orden alto; en el código se estima la estabilidad comparando n y n−1 nodos.
+Los resultados y figuras presentes en Informe/ fueron generados con los notebooks incluidos; para reproducir las figuras ejecute las celdas correspondientes.
 
 # Reproducibilidad
 
-    Abrir Aproximaciones.nb y ErroresAproximación.nb en Mathematica.
-    Ejecutar las celdas que definen las funciones.
-    Llamar a las funciones de ejemplo para generar gráficos y datos.
-    Si desea recompilar el informe en PDF: compilar Informe/informePractica.tex (asegúrese de que las figuras referenciadas existan en las rutas indicadas dentro de Informe/).
+Abrir Aproximaciones.nb y ErroresAproximación.nb en Mathematica.
+Ejecutar las celdas que definen las funciones.
+Llamar a las funciones de ejemplo para generar gráficos y datos.
+Si desea recompilar el informe en PDF: compilar Informe/informePractica.tex (asegúrese de que las figuras referenciadas existan en las rutas indicadas dentro de Informe/).
 
